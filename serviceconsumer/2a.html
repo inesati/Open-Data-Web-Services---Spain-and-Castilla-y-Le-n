@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Puntos de Recarga</title>
+    <link rel="stylesheet" href="2a.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // Función para realizar la búsqueda sin recargar la página
+        $(document).ready(function() {
+            $('#search-form').submit(function(event) {
+                event.preventDefault(); // Evitar que el formulario recargue la página
+                var provincia = $('#provincia').val(); // Obtener el valor de la provincia
+
+                // Enviar la solicitud AJAX al servidor
+                $.ajax({
+                    url: '2a.php',  // URL donde se procesará la búsqueda
+                    type: 'GET',
+                    data: { provincia: provincia },  // Datos que enviamos
+                    success: function(data) {
+                        $('#resultados').html(data);  // Mostrar los resultados en el contenedor
+                    },
+                    error: function() {
+                        alert('Error al realizar la búsqueda');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Buscar Puntos de Recarga por Provincia</h1>
+            <!-- Formulario de búsqueda -->
+            <form id="search-form" class="search-form">
+                <input type="text" id="provincia" name="provincia" placeholder="Escribe la provincia" class="search-input" required>
+                <button type="submit" class="search-button">Buscar</button>
+            </form>
+        </header>
+
+        <div id="resultados"></div>  <!-- Aquí se mostrarán los resultados -->
+    </div>
+</body>
+</html>

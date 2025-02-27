@@ -1,0 +1,11 @@
+los files estan organizados como 
+1a.  Dentro de la Web de datos abiertos del Gobierno de España, existe la opción de
+conocer los datos de ocupación por sector, a partir de la EPA. Se pide utilizar estos
+datos para, dado un año y una provincia, obtener por trimestre el porcentaje de
+ocupados por sector económico (Industria, Servicios, etc.). Los datos se encuentran
+en: https://servicios.ine.es/wstempus/js/es/DATOS_TABLA/3995?tip=AM (ejecutar 1a.php)
+
+2a.   Puntos de recarga de vehículos eléctricos. (ejecutar solo 2a.html)
+2b.   Convocatoria de empleo público dadas dos fechas(ejecutar 2b.php ).
+2c.   Establecimientos farmacéuticos en Castilla y León(ejecutar 2c.php).
+2d.   Tasa de mortalidad COVID-19 por zonas de salud(ejecutar 2d.php).
